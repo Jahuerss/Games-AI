@@ -1,4 +1,6 @@
-import pygame, sys, math
+import fileinput
+
+import pygame, sys, math, time
 from pygame.locals import *
 
 # Iniciar Pygame
@@ -147,11 +149,52 @@ while True:
 
     # Comprobar si hay un ganador o empate
     if estat == 1:
-        print('Gana Humano')
+        time.sleep(1)
         break
     elif estat == 2:
-        print('Gana IA')
+        time.sleep(1)
         break
     elif estat == -1:
-        print('Empate')
+        time.sleep(1)
         break
+
+
+pygame.init()
+pygame.display.set_caption('Tic-Tac-Toe')
+pantalla = pygame.display.set_mode((600, 600))
+pantalla.fill((255, 255, 255))
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+        if estat == -1:
+            empate = pygame.image.load('assets/empat.png')
+            pantalla.blit(empate, (0, 0))
+            pygame.display.update()
+            time.sleep(3)
+            pygame.quit()
+            sys.exit()
+            break
+        elif estat == 1:
+            empate = pygame.image.load('assets/Jugador-victoria.png')
+            pantalla.blit(empate, (0, 0))
+            pygame.display.update()
+            time.sleep(3)
+            pygame.quit()
+            sys.exit()
+            break
+        elif estat == 2:
+            empate = pygame.image.load('assets/IA-victoria.png')
+            pantalla.blit(empate, (0, 0))
+            pygame.display.update()
+            time.sleep(3)
+            pygame.quit()
+            sys.exit()
+            break
+
+
+
+
+
+
