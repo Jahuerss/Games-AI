@@ -41,7 +41,7 @@ rectangles = [
     pygame.Rect(420, 420, 184, 184),
 ]
 
-# Colores de fons per a cada casella
+# Colors de fons per a cada casella
 colors_fons = [
     (85, 107, 47),  # Verd fosc
     (144, 238, 144),  # Verd clar
